@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Judul & deskripsi (judul juga diisi otomatis dari CONFIG di script.js) -->
+  <title>BONATUA PARSAORAN SIPAYUNG | Photography Portfolio</title>
+  <meta name="description" content="Portfolio fotografi: portrait, landscape, event, wedding, product, dan street photography.">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta property="og:title" content="Photography Portfolio">
+  <meta property="og:description" content="Capturing Moments, Creating Stories.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Cormorant Garamond (judul, serif) + Jost (isi, sans-serif) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#portfolio">Skip to portfolio</a>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="site-header" id="siteHeader">
+    <div class="wrap nav">
+      <a class="brand" href="#home" data-text="brandName">Photographer</a>
+
+      <button class="nav__toggle" id="navToggle" type="button"
+              aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+        <span data-icon="menu"></span>
+      </button>
+
+      <nav class="nav__menu" id="menu" aria-label="Main">
+        <ul class="nav__list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home" aria-labelledby="heroTitle">
+      <div class="hero__media">
+        <img id="heroImg" alt="Featured photograph by the photographer" width="1600" height="1000" fetchpriority="high">
+        <div class="hero__shade"></div>
+      </div>
+
+      <div class="wrap hero__content">
+        <p class="hero__brand" data-text="brandName"></p>
+        <h1 id="heroTitle">Capturing Moments, Creating Stories.</h1>
+        <p class="hero__desc" data-text="heroDescription"></p>
+        <div class="hero__actions">
+          <a class="btn btn--solid" href="#portfolio">Explore My Work</a>
+          <a class="btn btn--ghost" href="#contact">Contact Me</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PORTFOLIO ============ -->
+    <section class="section portfolio" id="portfolio" aria-labelledby="portfolioTitle">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 id="portfolioTitle">Selected Work</h2>
+          <p class="section__intro">A small selection from recent years. Tap any photograph to view it larger.</p>
+        </div>
+
+        <!-- Tombol filter dibuat otomatis dari CATEGORIES di script.js -->
+        <div class="filters" id="filters" role="group" aria-label="Filter photos by category"></div>
+
+        <!-- Galeri masonry dibuat otomatis dari PHOTOS di script.js -->
+        <div class="gallery" id="gallery"></div>
+
+        <p class="gallery__empty" id="galleryEmpty" hidden>No photos in this category yet.</p>
+
+        <div class="gallery__footer">
+          <p class="gallery__status" id="galleryStatus" aria-live="polite"></p>
+          <button class="btn btn--ghost" id="loadMore" type="button">Load More</button>
+        </div>
+
+        <!-- Akses koleksi lengkap (Google Drive) -->
+        <aside class="collection" aria-labelledby="collectionTitle">
+          <div>
+            <h3 id="collectionTitle">The complete collection</h3>
+            <p>Only part of my work is shown here. Every album, in full resolution, is in a shared Google Drive folder.</p>
+          </div>
+          <a class="btn btn--solid" data-href="drive">
+            <span data-icon="folder"></span>
+            View Full Gallery
+          </a>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section about" id="about" aria-labelledby="aboutTitle">
+      <div class="wrap about__grid">
+        <figure class="about__photo">
+          <img id="profileImg" alt="Portrait of the photographer" width="800" height="1000" loading="lazy">
+        </figure>
+
+        <div class="about__body">
+          <h2 id="aboutTitle">About</h2>
+          <p class="about__name" data-text="brandName"></p>
+          <div id="aboutBio" class="about__bio"></div>
+
+          <ul class="chips" id="aboutSpecialties" aria-label="Specialties"></ul>
+
+          <div class="about__facts">
+            <div>
+              <h3>Experience</h3>
+              <p id="aboutExperience"></p>
+            </div>
+            <div>
+              <h3>Approach</h3>
+              <p id="aboutApproach"></p>
+            </div>
+            <div>
+              <h3>Philosophy</h3>
+              <p id="aboutPhilosophy"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact" aria-labelledby="contactTitle">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 id="contactTitle">Let's work together</h2>
+          <p class="section__intro">Tell me about your event, shoot, or project. I usually reply within one working day.</p>
+        </div>
+
+        <ul class="contact-list">
+          <li class="contact-row">
+            <span class="contact-row__icon" data-icon="mail"></span>
+            <div class="contact-row__text">
+              <h3>Email</h3>
+              <p data-text="email"></p>
+            </div>
+            <a class="btn btn--solid" data-href="mailto"><span data-icon="mail"></span>Send Email</a>
+          </li>
+
+          <li class="contact-row">
+            <span class="contact-row__icon" data-icon="whatsapp"></span>
+            <div class="contact-row__text">
+              <h3>WhatsApp</h3>
+              <p data-text="whatsappDisplay"></p>
+            </div>
+            <a class="btn btn--ghost" data-href="whatsapp"><span data-icon="whatsapp"></span>Chat on WhatsApp</a>
+          </li>
+
+          <li class="contact-row">
+            <span class="contact-row__icon" data-icon="instagram"></span>
+            <div class="contact-row__text">
+              <h3>Instagram</h3>
+              <p data-text="instagramHandle"></p>
+            </div>
+            <a class="btn btn--ghost" data-href="instagram"><span data-icon="instagram"></span>Visit Instagram</a>
+          </li>
+
+          <li class="contact-row">
+            <span class="contact-row__icon" data-icon="folder"></span>
+            <div class="contact-row__text">
+              <h3>Google Drive</h3>
+              <p>Full photo collection</p>
+            </div>
+            <a class="btn btn--ghost" data-href="drive"><span data-icon="folder"></span>Open Collection</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="wrap footer__inner">
+      <p class="footer__copy">&copy; <span id="year"></span> <span data-text="brandName"></span>. All rights reserved.</p>
+
+      <ul class="footer__links" aria-label="Social links">
+        <li><a data-href="instagram" aria-label="Instagram"><span data-icon="instagram"></span></a></li>
+        <li><a data-href="mailto" aria-label="Email"><span data-icon="mail"></span></a></li>
+        <li><a data-href="whatsapp" aria-label="WhatsApp"><span data-icon="whatsapp"></span></a></li>
+      </ul>
+
+      <a class="footer__top" href="#home">Back to top <span data-icon="arrowUp"></span></a>
+    </div>
+  </footer>
+
+  <!-- ============ LIGHTBOX ============ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+    <button class="lb-btn lb-close" id="lbClose" type="button" aria-label="Close viewer"><span data-icon="x"></span></button>
+    <button class="lb-btn lb-prev" id="lbPrev" type="button" aria-label="Previous photo"><span data-icon="chevronLeft"></span></button>
+    <button class="lb-btn lb-next" id="lbNext" type="button" aria-label="Next photo"><span data-icon="chevronRight"></span></button>
+
+    <figure class="lb-figure" id="lbFigure">
+      <img id="lbImg" alt="">
+      <figcaption>
+        <span class="lb-title" id="lbTitle"></span>
+        <span class="lb-meta" id="lbMeta"></span>
+      </figcaption>
+    </figure>
+  </div>
+
+  <noscript>
+    <p style="padding:1rem;text-align:center;background:#c9a96e;color:#0a0a0a">This portfolio needs JavaScript to show the gallery.</p>
+  </noscript>
+</body>
+</html>
